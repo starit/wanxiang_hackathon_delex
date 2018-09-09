@@ -1,0 +1,105 @@
+@import './mixin';
+
+//common elements
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: #555555;
+  background: #f4f4f4;
+  font-size: 14px;
+  font-family: "Microsoft YaHei", "微软雅黑", "黑体", "PingFang SC", "宋体", sans-serif;
+  position: relative;
+  height: 100%;
+}
+
+//
+img {
+  width: 100%;
+}
+
+//
+//button.btn:focus{
+//  outline: 0;
+//}
+//
+//li {
+//  list-style: none;
+//}
+//
+//.icon {
+//  display: inline-block;
+//}
+//
+//.glyphicon {
+//  top: 2px;
+//}
+
+.bg-gray {
+  background: #f4f4f4;
+}
+
+.pure-input {
+  background: transparent;
+}
+
+input, button, .btn {
+  outline: 0;
+  border: none;
+  &:focus {
+    outline: 0;
+  }
+}
+
+input.form-control {
+  box-shadow: none;
+  border: none;
+  background: #f4f4f4;
+}
+
+input.form-control.input-unchangeable {
+  background: #fff;
+  border: none;
+}
+
+.component {
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px 20px;
+  .component-title {
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .component-title-switch {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.empty-hint {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  color: rgba(0, 0, 0, .2);
+}
+
+.btn-delex, .btn-delex:active, .btn-delex:focus, .btn-delex:visited {
+  color: #fff;
+  background: -webkit-linear-gradient(left, #1752b0, #009dfe); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #1752b0, #009dfe); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #1752b0, #009dfe); /* Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #1752b0, #009dfe); /* 标准语法 */
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: auto;
+  }
+}
