@@ -18,16 +18,16 @@ namespace DELEX {
 			_delexmarket.emplace( account, [&]( auto& b ) {
 				b.device = device;
 				b.account = account;
-	            b.location = location;
-	            b.power = power;
-	            b.price = price;
-	         });
-	    } else {
-	    	// eosio_assert(  > 0, "this auction has already closed" );
-	    	eosio_assert(current->account == account, "device name is already taken");
-	    	eosio_assert(current->account != account, "device name is already registered");
-	    	eosio::print("not added");
-	    }
+				b.location = location;
+				b.power = power;
+				b.price = price;
+			});
+		} else {
+		// eosio_assert(  > 0, "this auction has already closed" );
+			eosio_assert(current->account == account, "device name is already taken");
+			eosio_assert(current->account != account, "device name is already registered");
+			eosio::print("not added");
+		}
 		// powerStaions[device].credit = this.defaultCredit;
 
 		// sort(powerStaions)

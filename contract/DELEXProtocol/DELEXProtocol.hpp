@@ -14,7 +14,7 @@ namespace DELEX {
 	using eosio::const_mem_fun;
 	// using eosio::block_timestamp;
 
-    //@abi table delexmarket i64
+	//@abi table delexmarket i64
 	struct delex_order {
 		account_name 	device;
 		account_name 	account;
@@ -30,16 +30,19 @@ namespace DELEX {
 	};
 
 	typedef eosio::multi_index< N(delexmarket), delex_order,
-                               indexed_by<N(price), const_mem_fun<delex_order, uint64_t, &delex_order::by_high_price>  >
-                               >  delexmarket_table;
+	indexed_by<N(price), const_mem_fun<delex_order, uint64_t, &delex_order::by_high_price>  >
+	>  delexmarket_table;
 
-    class  DELEXProtocol: public eosio::contract  {
-	    private:
-	    	delexmarket_table 	_delexmarket;
-	    public:
 
-	    	DELEXProtocol( account_name self );
-	    	//Todo:: account own deviecs?
+
+	class DELEXProtocol:public eosio::contract  {
+		private:
+			delexmarket_table 	_delexmarket;
+		public:
+
+			DELEXProtocol( account_name self );
+
+			//Todo:: account own deviecs?
 			void regstaion(account_name account, account_name device, std::string location, asset power, uint64_t price);
 
 			void unregstaion(account_name account, account_name device);
@@ -53,5 +56,6 @@ namespace DELEX {
 
 			//Todo:: Community
 			// function apply()
-    };
+
+		};
 }
